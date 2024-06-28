@@ -1,0 +1,20 @@
+{
+  "name": "tiny-11ty-starter-tailwind-alpine",
+  "version": "0.1",
+  "type": "module",
+  "devDependencies": {
+    "@11ty/eleventy": "canary",
+    "esbuild": "latest",
+    "html-minifier-terser": "latest",
+    "lightningcss": "latest",
+    "glob": "latest",
+    "chokidar": "latest",
+    "tailwindcss": "next",
+    "@tailwindcss/cli": "next"
+  },
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy",
+    "alpine-download": "node ./11ty/11ty_utilities/download_alpine.js"
+  }
+}

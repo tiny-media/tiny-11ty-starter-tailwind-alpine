@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="{{ eleventy.generator }}">
+    <title>
+      {% if title %}
+        {{ title | escape }} -
+      {% endif %}
+      {{ metadata.title | escape }}
+    </title>
+    <meta name="description" content="{% if description %}{{ description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Stylesheets -->
+    {% if styles %}
+      {% for style in styles %}
+        <link
+          rel="stylesheet"
+          href="/css/{{ style }}"
+          media="all">
+      {% endfor %}
+    {% endif %}
+
+    <!-- JavaScript -->
+    {% if scripts %}
+      {% for script in scripts %}
+        <script
+          src="/js/{{ script }}"
+          type="module"
+          defer></script>
+      {% endfor %}
+    {% endif %}
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+
+    <header class="bg-blue-500 text-white p-4">
+      {% render "header" %}
+    </header>
+
+    <main class="p-4">
+      {{ content }}
+    </main>
+
+    <footer class="bg-blue-500 text-white p-4 mt-4">
+      {% render "footer" %}
+    </footer>
+
+  </body>
+</html>

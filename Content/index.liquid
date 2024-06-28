@@ -1,0 +1,42 @@
+---
+layout: base
+title: tiny 11ty Starter Page (Tailwind + Alpine)
+scripts: [alpinejs.js]
+styles: [tailwind.css]
+---
+{% block content %}
+  <section class="container mx-auto p-4">
+    <h2 class="text-lg font-semibold">{{ title }}</h2>
+    <a href="/" class="mt-4 inline-block text-blue-500 hover:underline">Homepage</a>
+  </section>
+
+  <section>
+    <h2>Alpine Functions</h2>
+
+
+    <div x-data="{ count: 0 }">
+      <button x-on:click="count++">Increment</button>
+
+      <span x-text="count"></span>
+    </div>
+
+
+    <div class="container mx-auto p-4" x-data="{ count: 0 }">
+      <h3 class="text-lg font-semibold">Counter</h3>
+      <p class="mt-2 text-xl" x-text="count"></p>
+      <button class="mt-4 px-4 py-2 bg-blue-500 text-white rounded" @click="count++">Increment</button>
+      <button class="mt-4 ml-2 px-4 py-2 bg-red-500 text-white rounded" @click="count--">Decrement</button>
+    </div>
+
+    <div class="container mx-auto p-4" x-data="{ textInput: '' }">
+      <h3 class="text-lg font-semibold">Text Input</h3>
+      <input
+        type="text"
+        class="mt-2 px-4 py-2 border rounded"
+        x-model="textInput"
+        placeholder="Type something...">
+      <p class="mt-4 text-xl" x-text="textInput"></p>
+    </div>
+  </section>
+
+{% endblock %}
