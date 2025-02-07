@@ -23,7 +23,9 @@ export const vitePluginConfig = {
           path.resolve('11ty/_css/styles.css'),
           path.resolve('11ty/_js/main.js')
         ]
-      }
+      },
+      copyPublicDir: true
+    },
+    publicDir: path.resolve('public')
     }
   }
-}

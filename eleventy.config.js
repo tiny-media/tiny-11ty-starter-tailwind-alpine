@@ -10,14 +10,12 @@ export default function (eleventyConfig) {
   eleventyConfig.setLayoutsDirectory("_layouts");
   eleventyConfig.setOutputDirectory("_site");
 
-
   // Vite configuration
   eleventyConfig.addPlugin(EleventyVitePlugin, vitePluginConfig)
 
   // Passthrough copies
   eleventyConfig.addPassthroughCopy('11ty/_css')
   eleventyConfig.addPassthroughCopy('11ty/_js')
-  eleventyConfig.addPassthroughCopy('11ty/_headers')
 
   // Ignores
   eleventyConfig.ignores.add('.DS_Store');
