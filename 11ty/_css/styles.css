@@ -11,7 +11,7 @@
 
 ::view-transition-old(root),
 ::view-transition-new(root) {
-  animation-duration: 0.1s;
+  animation-duration: 0.2s;
 }
 
 @layer base {
