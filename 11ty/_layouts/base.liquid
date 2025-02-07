@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if title %}{{ title | escape }} | {% endif %}{{ site.title | escape }}</title>
+  <meta name="description" content="{% if description %}{{ description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  {% if noindex or nofollow or norobots %}
+  <meta name="robots" content="{% if noindex %}noindex{% endif %}{% if nofollow %},nofollow{% endif %}{% if norobots %},noarchive,nosnippet{% endif %}">
+  {% endif %}
+  <link rel="stylesheet" href="/_css/styles.css">
+  <script type="module" src="/_js/main.js"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 text-slate-800">
+  <div class="max-w-4xl mx-auto p-6 sm:p-8 md:p-10">
+    {% include 'header' %}
+    {{ content }}
+    {% include 'footer' %}
+  </div>
+</body>
+</html>

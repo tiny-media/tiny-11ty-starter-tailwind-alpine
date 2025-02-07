@@ -1,0 +1,31 @@
+/* Import Tailwind CSS v4 */
+@import "tailwindcss";
+
+/* Critical CSS - Must be outside layers to ensure it works during view transitions */
+[x-cloak] { display: none !important; }
+
+/* View Transitions */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.1s;
+}
+
+@layer base {
+  body {
+    @apply min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 text-slate-800;
+  }
+}
+
+  @starting-style {
+    .transition-slide-enter {
+      @apply opacity-0 translate-y-4;
+    }
+  }
+
+
+
+

@@ -1,20 +1,26 @@
 {
-  "name": "tiny-11ty-starter-tailwind-alpine",
-  "version": "0.1",
+  "name": "11ty-tailwind-alpine",
+  "version": "1.0.0",
   "type": "module",
+  "scripts": {
+    "dev": "rm -rf _site && bunx eleventy --serve --incremental",
+    "build": "rm -rf _site && bunx eleventy",
+    "stop-server": "lsof -ti :4321 | xargs kill"
+  },
+  "dependencies": {
+    "@alpinejs/collapse": "^3.14.8",
+    "@alpinejs/focus": "^3.14.8",
+    "@alpinejs/intersect": "^3.14.8",
+    "@alpinejs/mask": "^3.14.8",
+    "@alpinejs/persist": "^3.14.8",
+    "@alpinejs/sort": "^3.14.8",
+    "@alpinejs/ui": "^3.14.8",
+    "alpinejs": "^3.14.8"
+  },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
-    "esbuild": "^0.24.2",
-    "html-minifier-terser": "^7.2.0",
-    "lightningcss": "^1.29.1",
-    "glob": "^11.0.1",
-    "chokidar": "^4.0.3",
     "tailwindcss": "^4.0.4",
-    "@tailwindcss/cli": "^4.0.4"
-  },
-  "scripts": {
-    "dev": "bunx eleventy --serve",
-    "build": "bunx eleventy",
-    "alpine-download": "node ./11ty/11ty_utilities/download_alpine.js"
+    "@tailwindcss/vite": "^4.0.4",
+    "@11ty/eleventy-plugin-vite": "^6.0.0"
   }
 }
