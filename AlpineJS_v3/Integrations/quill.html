@@ -1,0 +1,27 @@
+---
+packages: @alpinejs
+---
+
+<!-- Alpine Integration: Quill -->
+
+
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+<div
+    x-data="{
+        value: '',
+        init() {
+            let quill = new Quill(this.$refs.quill, { theme: 'snow' })
+
+            quill.root.innerHTML = this.value
+
+            quill.on('text-change', () => {
+                this.value = quill.root.innerHTML
+            })
+        },
+    }"
+    class="max-w-2xl w-full bg-white"
+>
+    <div x-ref="quill"></div>
+</div>

@@ -1,0 +1,31 @@
+---
+packages: @alpinejs
+---
+
+<!-- Alpine Integration: Flatpickr -->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<div
+    x-data="{
+        value: ['2022/01/01', '2022/01/10'],
+        init() {
+            let picker = flatpickr(this.$refs.picker, {
+                mode: 'range',
+                dateFormat: 'Y/m/d',
+                defaultDate: this.value,
+                onChange: (date, dateString) => {
+                    this.value = dateString.split(' to ')
+                }
+            })
+
+            this.$watch('value', () => picker.setDate(this.value))
+        },
+    }"
+    class="max-w-sm w-full"
+>
+    <label for="picker" class="text-sm font-medium select-none text-gray-800">Date Range</label>
+
+    <input class="mt-3 w-full rounded-lg border border-gray-200 bg-white px-3 py-2 shadow-sm" x-ref="picker" id="picker" type="text">
+</div>

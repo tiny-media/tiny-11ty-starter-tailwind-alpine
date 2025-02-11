@@ -26,6 +26,6 @@ export const vitePluginConfig = {
       },
       copyPublicDir: true
     },
-    publicDir: path.resolve('public')
-    }
+    publicDir: path.resolve('11ty/_rootFolder')
   }
+}

@@ -1,0 +1,51 @@
+---
+packages: @alpinejs, @alpinejs/ui, @alpinejs/focus
+---
+
+<!-- Alpine Component: Dialog (Modal) -->
+
+<div x-data="{ open: false }" class="flex justify-center">
+    <!-- Trigger -->
+    <span x-on:click="open = true">
+        <button type="button" class="relative flex items-center justify-center gap-2 whitespace-nowrap rounded-lg border border-gray-200 bg-white px-4 py-2 text-gray-800 shadow-sm hover:border-gray-200 hover:bg-gray-50">Open dialog</button>
+    </span>
+
+    <!-- Modal -->
+    <div x-dialog x-model="open" x-cloak class="fixed inset-0 z-10 overflow-y-auto">
+        <!-- Overlay -->
+        <div x-dialog:overlay x-transition.opacity class="fixed inset-0 bg-black/25"></div>
+
+        <!-- Panel -->
+        <div class="relative flex min-h-screen items-center justify-center p-4">
+            <div x-dialog:panel x-transition class="relative min-w-96 max-w-xl rounded-xl bg-white p-6 shadow-lg">
+                <!-- Close Button -->
+                <div class="absolute right-0 top-0 mr-4 mt-4">
+                    <button type="button" @click="$dialog.close()" class="relative inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md bg-transparent p-1.5 font-medium text-gray-400 hover:bg-gray-800/10 hover:text-gray-800">
+                        <span class="sr-only">Close modal</span>
+                        <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Body -->
+                <div>
+                    <!-- Title -->
+                    <h2 x-dialog:title class="font-medium text-gray-800">Ready to go live?</h2>
+
+                    <!-- Content -->
+                    <div class="mt-2 text-gray-500 max-w-xs">
+                        <p>Once published, your content will be visible to everyone.</p>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="mt-6 flex justify-end space-x-2">
+                    <button type="button" x-on:click="$dialog.close()" class="relative flex items-center justify-center gap-2 whitespace-nowrap rounded-lg border border-transparent bg-transparent px-4 py-2 text-gray-800 hover:bg-gray-800/10">Cancel</button>
+
+                    <button type="button" x-on:click="$dialog.close()" class="relative flex items-center justify-center gap-2 whitespace-nowrap rounded-lg border border-transparent bg-gray-800 px-4 py-2 text-white hover:bg-gray-900">Publish</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+---
+packages: @alpinejs
+---
+
+<!-- Alpine Component: Toggle -->
+
+
+<!-- Toggle -->
+<div
+    x-data="{ value: false }"
+    class="flex min-w-0 gap-4 items-center"
+    x-id="['toggle-label']"
+>
+    <input type="hidden" name="sendNotifications" :value="value">
+
+    <!-- Label -->
+    <label
+        @click="$refs.toggle.click(); $refs.toggle.focus()"
+        :id="$id('toggle-label')"
+        class="font-medium text-gray-800 select-none"
+    >
+        Send notifications
+    </label>
+
+    <!-- Button -->
+    <button
+        x-ref="toggle"
+        @click="value = ! value"
+        type="button"
+        role="switch"
+        :aria-checked="value"
+        :aria-labelledby="$id('toggle-label')"
+        :class="value ? 'bg-gray-800' : 'bg-gray-800/20'"
+        class="relative inline-flex h-5 w-8 items-center rounded-full outline-offset-2 transition"
+    >
+        <span
+            :class="value ? 'translate-x-[15px]' : 'translate-x-[3px]'"
+            class="bg-white size-3.5 rounded-full transition shadow-md"
+            aria-hidden="true"
+        ></span>
+    </button>
+</div>

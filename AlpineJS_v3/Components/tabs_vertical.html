@@ -1,0 +1,54 @@
+---
+packages: @alpinejs, @alpinejs/ui, @alpinejs/focus
+---
+
+<!-- Alpine Component: Tabs - Vertical -->
+
+
+<!-- Tabs -->
+<div x-data x-tabs class="mx-auto max-w-5xl flex flex-col items-start gap-6 sm:flex-row">
+    <!-- Tab Headings -->
+    <div x-tabs:list class="flex gap-2 sm:flex-col sm:w-1/4 sm:shrink-0">
+        <!-- Tab -->
+        <button x-tabs:tab type="button"
+            :class="$tab.isSelected ? 'bg-gray-800/5 text-gray-800' : 'text-gray-700'"
+            class="h-10 lg:h-8 relative flex items-center gap-3 rounded-lg  py-0 text-left w-full px-3 my-px border-gray-200 text-gray-500 hover:text-gray-800 hover:bg-gray-100"
+        >
+            Profile
+        </button>
+
+        <button x-tabs:tab type="button"
+            :class="$tab.isSelected ? 'bg-gray-800/5 text-gray-800' : 'text-gray-700'"
+            class="h-10 lg:h-8 relative flex items-center gap-3 rounded-lg  py-0 text-left w-full px-3 my-px border-gray-200 text-gray-500 hover:text-gray-800 hover:bg-gray-100"
+        >
+            Account
+        </button>
+
+        <button x-tabs:tab type="button"
+            :class="$tab.isSelected ? 'bg-gray-800/5 text-gray-800' : 'text-gray-700'"
+            class="h-10 lg:h-8 relative flex items-center gap-3 rounded-lg  py-0 text-left w-full px-3 my-px border-gray-200 text-gray-500 hover:text-gray-800 hover:bg-gray-100"
+        >Billing</button>
+    </div>
+
+    <!-- Tab Panels -->
+    <div x-tabs:panels class="rounded-lg border border-gray-200 bg-white">
+        <!-- Tab Panel -->
+        <section x-tabs:panel class="p-8">
+            <h2 class="text-xl font-bold">Profile</h2>
+            <p class="mt-2 text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, quo sequi error quibusdam quas temporibus animi sapiente eligendi! Deleniti minima velit recusandae iure.</p>
+            <button class="mt-5 rounded-md border border-gray-200 px-4 py-2 text-sm">Take Action</button>
+        </section>
+
+        <section x-tabs:panel class="p-8">
+            <h2 class="text-xl font-bold">Account</h2>
+            <p class="mt-2 text-gray-500">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <button class="mt-5 rounded-md border border-gray-200 px-4 py-2 text-sm">Take Action</button>
+        </section>
+
+        <section x-tabs:panel class="p-8">
+            <h2 class="text-xl font-bold">Billing</h2>
+            <p class="mt-2 text-gray-500">Ex culpa esse occaecat aliquip laboris. Culpa aliquip excepteur irure. Tempor ut nisi nulla quis non est magna id ipsum ea sunt commodo aliquip id. Incididunt ipsum nulla ex amet laborum cupidatat mollit et labore dolor.</p>
+            <button class="mt-5 rounded-md border border-gray-200 px-4 py-2 text-sm">Take Action</button>
+        </section>
+    </div>
+</div>

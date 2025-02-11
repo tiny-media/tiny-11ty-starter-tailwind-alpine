@@ -1,0 +1,186 @@
+---
+packages: @alpinejs, @alpinejs/ui, @alpinejs/focus
+---
+
+<!-- Alpine Component: Popover - Group -->
+
+<!-- Popover Group -->
+<div x-popover:group class="flex items-center justify-center gap-1">
+    <!-- Popover -->
+    <div x-data x-popover class="relative">
+        <!-- Popover Button -->
+        <button
+            x-popover:button
+            type="button"
+            class="relative flex items-center whitespace-nowrap justify-center gap-2 py-2 rounded-lg text-gray-800 hover:bg-gray-800/10 px-4"
+        >
+            <svg
+                class="shrink-0 size-5"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+            >
+                <path
+                    fill-rule="evenodd"
+                    d="M6 3.75A2.75 2.75 0 0 1 8.75 1h2.5A2.75 2.75 0 0 1 14 3.75v.443c.572.055 1.14.122 1.706.2C17.053 4.582 18 5.75 18 7.07v3.469c0 1.126-.694 2.191-1.83 2.54-1.952.599-4.024.921-6.17.921s-4.219-.322-6.17-.921C2.694 12.73 2 11.665 2 10.539V7.07c0-1.321.947-2.489 2.294-2.676A41.047 41.047 0 0 1 6 4.193V3.75Zm6.5 0v.325a41.622 41.622 0 0 0-5 0V3.75c0-.69.56-1.25 1.25-1.25h2.5c.69 0 1.25.56 1.25 1.25ZM10 10a1 1 0 0 0-1 1v.01a1 1 0 0 0 1 1h.01a1 1 0 0 0 1-1V11a1 1 0 0 0-1-1H10Z"
+                    clip-rule="evenodd"
+                />
+                <path
+                    d="M3 15.055v-.684c.126.053.255.1.39.142 2.092.642 4.313.987 6.61.987 2.297 0 4.518-.345 6.61-.987.135-.041.264-.089.39-.142v.684c0 1.347-.985 2.53-2.363 2.686a41.454 41.454 0 0 1-9.274 0C3.985 17.585 3 16.402 3 15.055Z"
+                />
+            </svg>
+
+            <span>Workspace</span>
+
+            <!-- Heroicon: micro chevron-down -->
+            <svg
+                class="shrink-0 size-4"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 16 16"
+                fill="currentColor"
+                aria-hidden="true"
+            >
+                <path
+                    fill-rule="evenodd"
+                    d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z"
+                    clip-rule="evenodd"
+                />
+            </svg>
+        </button>
+
+        <!-- Popover Panel -->
+        <div
+            x-popover:panel
+            x-transition.origin.top.left
+            class="absolute left-0 min-w-48 rounded-lg shadow-sm mt-2 z-10 origin-top-left bg-white p-1.5 outline-none border border-gray-200"
+            x-cloak
+        >
+            <a
+                href="#contracts"
+                class="group px-2 py-1.5 w-full flex items-center rounded-md transition-colors text-left text-gray-800 focus-visible:bg-gray-50 hover:bg-gray-50"
+            >
+                Contracts
+            </a>
+            <a
+                href="#documents"
+                class="group px-2 py-1.5 w-full flex items-center rounded-md transition-colors text-left text-gray-800 focus-visible:bg-gray-50 hover:bg-gray-50"
+            >
+                Documents
+            </a>
+            <a
+                href="#history"
+                class="group px-2 py-1.5 w-full flex items-center rounded-md transition-colors text-left text-gray-800 focus-visible:bg-gray-50 hover:bg-gray-50"
+            >
+                History
+            </a>
+        </div>
+    </div>
+
+    <div
+        role="none"
+        class="border-0 bg-gray-800/10 self-stretch w-px my-2.5"
+    ></div>
+
+    <div x-data x-popover class="relative">
+        <button
+            x-popover:button
+            type="button"
+            class="relative flex items-center whitespace-nowrap justify-center gap-2 py-2 rounded-lg text-gray-800 hover:bg-gray-800/10 px-4"
+        >
+            Account
+
+            <!-- Heroicon: micro chevron-down -->
+            <svg
+                class="size-4"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 16 16"
+                fill="currentColor"
+                aria-hidden="true"
+            >
+                <path
+                    fill-rule="evenodd"
+                    d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z"
+                    clip-rule="evenodd"
+                />
+            </svg>
+        </button>
+
+        <div
+            x-popover:panel
+            x-transition.origin.top.left
+            class="absolute left-0 min-w-48 rounded-lg shadow-sm mt-2 z-10 origin-top-left bg-white p-1.5 outline-none border border-gray-200"
+            x-cloak
+        >
+            <a
+                href="#profile"
+                class="group px-2 py-1.5 w-full flex items-center rounded-md transition-colors text-left text-gray-800 focus-visible:bg-gray-50 hover:bg-gray-50"
+            >
+                Profile
+            </a>
+            <a
+                href="#settings"
+                class="group px-2 py-1.5 w-full flex items-center rounded-md transition-colors text-left text-gray-800 focus-visible:bg-gray-50 hover:bg-gray-50"
+            >
+                Settings
+            </a>
+            <a
+                href="#billing"
+                class="group px-2 py-1.5 w-full flex items-center rounded-md transition-colors text-left text-gray-800 focus-visible:bg-gray-50 hover:bg-gray-50"
+            >
+                Billing
+            </a>
+        </div>
+    </div>
+
+    <div x-data x-popover class="relative">
+        <button
+            x-popover:button
+            type="button"
+            class="relative flex items-center whitespace-nowrap justify-center gap-2 py-2 rounded-lg text-gray-800 hover:bg-gray-800/10 px-4"
+        >
+            Favorites
+
+            <!-- Heroicon: micro chevron-down -->
+            <svg
+                class="size-4"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 16 16"
+                fill="currentColor"
+                aria-hidden="true"
+            >
+                <path
+                    fill-rule="evenodd"
+                    d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z"
+                    clip-rule="evenodd"
+                />
+            </svg>
+        </button>
+
+        <div
+            x-popover:panel
+            x-transition.origin.top.left
+            class="absolute left-0 min-w-48 rounded-lg shadow-sm mt-2 z-10 origin-top-left bg-white p-1.5 outline-none border border-gray-200"
+            x-cloak
+        >
+            <a
+                href="#marketing-site"
+                class="group px-2 py-1.5 w-full flex items-center rounded-md transition-colors text-left text-gray-800 focus-visible:bg-gray-50 hover:bg-gray-50"
+            >
+                Marketing site
+            </a>
+            <a
+                href="#android-app"
+                class="group px-2 py-1.5 w-full flex items-center rounded-md transition-colors text-left text-gray-800 focus-visible:bg-gray-50 hover:bg-gray-50"
+            >
+                Android app
+            </a>
+            <a
+                href="#brand-guidelines"
+                class="group px-2 py-1.5 w-full flex items-center rounded-md transition-colors text-left text-gray-800 focus-visible:bg-gray-50 hover:bg-gray-50"
+            >
+                Brand guidelines
+            </a>
+        </div>
+    </div>
+</div>

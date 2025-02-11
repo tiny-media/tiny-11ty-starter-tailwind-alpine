@@ -1,0 +1,71 @@
+---
+packages: @alpinejs, @alpinejs/ui, @alpinejs/focus
+---
+<!-- Alpine Component: Popover - Profile -->
+
+
+<!-- Popover -->
+<div x-data x-popover class="relative max-w-full">
+
+    <!-- Popover Button -->
+    <button x-popover:button class="group flex items-center rounded-lg w-full p-1 hover:bg-gray-800/10">
+        <div class="shrink-0 size-8 bg-gray-400 rounded overflow-hidden">
+            <img src="https://ui-avatars.com/api/?name=Adam+Lazzara">
+        </div>
+
+        <span class="text-gray-500 group-hover:text-gray-800 font-medium truncate ml-4">
+            Adam Lazzara
+        </span>
+
+        <!-- Heroicon: micro chevron-down -->
+        <svg  class="ml-2 shrink-0 size-4 text-gray-400 group-hover:text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+           <path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+        </svg>
+    </button>
+
+    <!-- Popover Panel -->
+    <div
+        x-popover:panel
+        x-transition.origin.top.left
+        x-cloak
+        class="absolute left-0 min-w-48 rounded-lg shadow-sm mt-2 z-10 origin-top-left bg-white p-1.5 outline-none border border-gray-200"
+    >
+        <a
+            href="#account"
+            class="group px-2 py-1.5 w-full flex items-center rounded-md  transition-colors text-left text-gray-800 focus-visible:bg-gray-50 hover:bg-gray-50"
+        >
+            <svg class="shrink-0 size-5 mr-2 text-gray-400 group-focus-visible:text-gray-800 group-hover:text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path d="M10 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM3.465 14.493a1.23 1.23 0 0 0 .41 1.412A9.957 9.957 0 0 0 10 18c2.31 0 4.438-.784 6.131-2.1.43-.333.604-.903.408-1.41a7.002 7.002 0 0 0-13.074.003Z" />
+            </svg>
+            Account
+        </a>
+        <a
+            href="#profile"
+            class="group px-2 py-1.5 w-full flex items-center rounded-md  transition-colors text-left text-gray-800 focus-visible:bg-gray-50 hover:bg-gray-50"
+        >
+            <svg class="shrink-0 size-5 mr-2 text-gray-400 group-focus-visible:text-gray-800 group-hover:text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path d="M2.879 7.121A3 3 0 0 0 7.5 6.66a2.997 2.997 0 0 0 2.5 1.34 2.997 2.997 0 0 0 2.5-1.34 3 3 0 1 0 4.622-3.78l-.293-.293A2 2 0 0 0 15.415 2H4.585a2 2 0 0 0-1.414.586l-.292.292a3 3 0 0 0 0 4.243ZM3 9.032a4.507 4.507 0 0 0 4.5-.29A4.48 4.48 0 0 0 10 9.5a4.48 4.48 0 0 0 2.5-.758 4.507 4.507 0 0 0 4.5.29V16.5h.25a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1-.75-.75v-3.5a.75.75 0 0 0-.75-.75h-2.5a.75.75 0 0 0-.75.75v3.5a.75.75 0 0 1-.75.75h-4.5a.75.75 0 0 1 0-1.5H3V9.032Z" />
+            </svg>
+            Profile
+        </a>
+        <a
+            href="#billing"
+            class="group px-2 py-1.5 w-full flex items-center rounded-md  transition-colors text-left text-gray-800 focus-visible:bg-gray-50 hover:bg-gray-50"
+        >
+            <svg class="shrink-0 size-5 mr-2 text-gray-400 group-focus-visible:text-gray-800 group-hover:text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M2.5 4A1.5 1.5 0 0 0 1 5.5V6h18v-.5A1.5 1.5 0 0 0 17.5 4h-15ZM19 8.5H1v6A1.5 1.5 0 0 0 2.5 16h15a1.5 1.5 0 0 0 1.5-1.5v-6ZM3 13.25a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 0 1.5h-1.5a.75.75 0 0 1-.75-.75Zm4.75-.75a.75.75 0 0 0 0 1.5h3.5a.75.75 0 0 0 0-1.5h-3.5Z" clip-rule="evenodd" />
+            </svg>
+            Billing
+        </a>
+        <a
+            href="#logout"
+            class="group px-2 py-1.5 w-full flex items-center rounded-md transition-colors text-left text-gray-800 focus-visible:bg-red-50 focus-visible:text-red-600 hover:bg-red-50 hover:text-red-600"
+        >
+            <svg class="shrink-0 size-5 mr-2 text-gray-400 group-focus-visible:text-red-600 group-hover:text-red-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M3 4.25A2.25 2.25 0 0 1 5.25 2h5.5A2.25 2.25 0 0 1 13 4.25v2a.75.75 0 0 1-1.5 0v-2a.75.75 0 0 0-.75-.75h-5.5a.75.75 0 0 0-.75.75v11.5c0 .414.336.75.75.75h5.5a.75.75 0 0 0 .75-.75v-2a.75.75 0 0 1 1.5 0v2A2.25 2.25 0 0 1 10.75 18h-5.5A2.25 2.25 0 0 1 3 15.75V4.25Z" clip-rule="evenodd" />
+                <path fill-rule="evenodd" d="M6 10a.75.75 0 0 1 .75-.75h9.546l-1.048-.943a.75.75 0 1 1 1.004-1.114l2.5 2.25a.75.75 0 0 1 0 1.114l-2.5 2.25a.75.75 0 1 1-1.004-1.114l1.048-.943H6.75A.75.75 0 0 1 6 10Z" clip-rule="evenodd" />
+            </svg>
+            Logout
+        </a>
+    </div>
+</div>

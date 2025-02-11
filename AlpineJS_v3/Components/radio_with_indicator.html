@@ -1,0 +1,84 @@
+---
+packages: @alpinejs, @alpinejs/ui, @alpinejs/focus
+---
+
+<!-- Alpine Component: Radio - with Indicator -->
+
+
+<!-- Radio -->
+<div x-data="{ value: 'standard' }" x-radio x-model="value" class="w-full max-w-2xl">
+    <!-- Radio Label -->
+    <label x-radio:label class="sr-only">Shipping: <span x-text="value"></span></label>
+
+    <div class="flex gap-3 max-sm:flex-col">
+        <!-- Option -->
+        <div x-radio:option value="standard"
+            class="flex flex-1 cursor-pointer justify-between gap-3 rounded-lg border p-4 shadow-sm hover:bg-gray-50"
+            :class="{ 'bg-gray-50 border-gray-800': $radioOption.isChecked, 'bg-white border-gray-800/15': !$radioOption.isChecked }"
+        >
+            <div class="flex flex-1 gap-2">
+                <div class="flex-1">
+                    <!-- Primary Label -->
+                    <p x-radio:label class="font-medium text-gray-800">Standard</p>
+
+                    <!-- Secondary Information -->
+                    <div x-radio:description class="mt-2 text-sm text-gray-500">4-10 business days</div>
+                </div>
+            </div>
+
+            <!-- Checked Indicator -->
+            <div
+                class="flex size-[14px] shrink-0 items-center justify-center rounded-full text-gray-700 shadow-none ring-1 ring-offset-2"
+                aria-hidden="true"
+                :class="{
+                    'ring-gray-800 bg-gray-800 hover:bg-gray-800 focus:bg-gray-800': $radioOption.isChecked,
+                    'ring-gray-300 bg-white': !$radioOption.isChecked
+                }"
+            ></div>
+        </div>
+
+        <div x-radio:option value="fast"
+            class="flex flex-1 cursor-pointer justify-between gap-3 rounded-lg border p-4 shadow-sm hover:bg-gray-50"
+            :class="{ 'bg-gray-50 border-gray-800': $radioOption.isChecked, 'bg-white border-gray-800/15': !$radioOption.isChecked }"
+        >
+            <div class="flex flex-1 gap-2">
+                <div class="flex-1">
+                    <p x-radio:label class="font-medium text-gray-800">Fast</p>
+
+                    <div x-radio:description class="mt-2 text-sm text-gray-500">2-5 business days</div>
+                </div>
+            </div>
+
+            <div
+                class="flex size-[14px] shrink-0 items-center justify-center rounded-full text-gray-700 shadow-none ring-1 ring-offset-2"
+                aria-hidden="true"
+                :class="{
+                    'ring-gray-800 bg-gray-800 hover:bg-gray-800 focus:bg-gray-800': $radioOption.isChecked,
+                    'ring-gray-300 bg-white': !$radioOption.isChecked
+                }"
+            ></div>
+        </div>
+
+        <div x-radio:option value="next-day"
+            class="flex flex-1 cursor-pointer justify-between gap-3 rounded-lg border p-4 shadow-sm hover:bg-gray-50"
+            :class="{ 'bg-gray-50 border-gray-800': $radioOption.isChecked, 'bg-white border-gray-800/15': !$radioOption.isChecked }"
+        >
+            <div class="flex flex-1 gap-2">
+                <div class="flex-1">
+                    <p x-radio:label class="font-medium text-gray-800">Next day</p>
+
+                    <div x-radio:description class="mt-2 text-sm text-gray-500">1 business day</div>
+                </div>
+            </div>
+
+            <div
+                class="flex size-[14px] shrink-0 items-center justify-center rounded-full text-gray-700 shadow-none ring-1 ring-offset-2"
+                aria-hidden="true"
+                :class="{
+                    'ring-gray-800 bg-gray-800 hover:bg-gray-800 focus:bg-gray-800': $radioOption.isChecked,
+                    'ring-gray-300 bg-white': !$radioOption.isChecked
+                }"
+            ></div>
+        </div>
+    </div>
+</div>

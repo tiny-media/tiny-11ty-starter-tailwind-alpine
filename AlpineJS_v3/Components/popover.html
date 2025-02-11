@@ -1,0 +1,46 @@
+---
+packages: @alpinejs, @alpinejs/ui, @alpinejs/focus
+---
+
+<!-- Alpine Component: Popover -->
+
+<!-- Popover -->
+<div x-data x-popover class="relative">
+
+    <!-- Popover Button -->
+    <button x-popover:button type="button" class="relative flex items-center whitespace-nowrap justify-center gap-2 py-2 rounded-lg shadow-sm bg-white hover:bg-gray-50 text-gray-800 border border-gray-200 hover:border-gray-200 px-4">
+        Account
+
+        <!-- Heroicon: micro chevron-down -->
+        <svg  class="size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+        </svg>
+    </button>
+
+    <!-- Popover Panel -->
+    <div
+        x-popover:panel
+        x-transition.origin.top.left
+        class="absolute left-0 min-w-48 rounded-lg shadow-sm mt-2 z-10 origin-top-left bg-white p-1.5 outline-none border border-gray-200"
+        x-cloak
+    >
+        <a
+            href="#profile"
+            class="group px-2 py-1.5 w-full flex items-center rounded-md  transition-colors text-left text-gray-800 focus-visible:bg-gray-50 hover:bg-gray-50"
+        >
+            Profile
+        </a>
+        <a
+            href="#settings"
+            class="group px-2 py-1.5 w-full flex items-center rounded-md  transition-colors text-left text-gray-800 focus-visible:bg-gray-50 hover:bg-gray-50"
+        >
+            Settings
+        </a>
+        <a
+            href="#billing"
+            class="group px-2 py-1.5 w-full flex items-center rounded-md  transition-colors text-left text-gray-800 focus-visible:bg-gray-50 hover:bg-gray-50"
+        >
+            Billing
+        </a>
+    </div>
+</div>

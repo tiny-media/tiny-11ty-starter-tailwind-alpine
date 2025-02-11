@@ -1,0 +1,106 @@
+---
+packages: @alpinejs, @alpinejs/ui, @alpinejs/focus
+---
+<!-- Alpine Component: Menu (Dropdown) with Icons -->
+
+<!-- Menu -->
+<div x-data x-menu class="relative">
+
+    <!-- Menu Button -->
+    <button x-menu:button class="relative flex items-center whitespace-nowrap justify-center gap-2 py-2 rounded-lg shadow-sm bg-white hover:bg-gray-50 text-gray-800 border border-gray-200 hover:border-gray-200 px-4">
+        <span>Options</span>
+
+        <!-- Heroicon: micro chevron-down -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
+            <path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+        </svg>
+    </button>
+
+    <!-- Menu Items -->
+    <div
+        x-menu:items
+        x-transition.origin.top.left
+        class="absolute left-0 min-w-48 rounded-lg shadow-sm mt-2 z-10 origin-top-left bg-white divide-y divide-gray-200 outline-none border border-gray-200"
+        x-cloak
+    >
+        <div class="p-1.5" role="group">
+            <!-- Menu Item -->
+            <button
+                x-menu:item
+                type="button"
+                :class="{
+                    'bg-gray-50': $menuItem.isActive,
+                    'opacity-50 cursor-not-allowed': $menuItem.isDisabled,
+                }"
+                class="px-2 py-1.5 w-full flex items-center rounded-md transition-colors focus:outline-none text-left text-gray-800"
+            >
+                <svg class="shrink-0 size-5 mr-2" :class="{ 'text-gray-400': ! $menuItem.isActive  }" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path d="M10.75 4.75a.75.75 0 0 0-1.5 0v4.5h-4.5a.75.75 0 0 0 0 1.5h4.5v4.5a.75.75 0 0 0 1.5 0v-4.5h4.5a.75.75 0 0 0 0-1.5h-4.5v-4.5Z"></path>
+                </svg>
+                New post
+            </button>
+        </div>
+        <div class="p-1.5" role="group">
+            <button
+                x-menu:item
+                type="button"
+                :class="{
+                    'bg-gray-50': $menuItem.isActive,
+                    'opacity-50 cursor-not-allowed': $menuItem.isDisabled,
+                }"
+                class="px-2 py-1.5 w-full flex items-center rounded-md transition-colors focus:outline-none text-left text-gray-800"
+            >
+                <svg class="shrink-0 size-5 mr-2" :class="{ 'text-gray-400': ! $menuItem.isActive  }" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M15.988 3.012A2.25 2.25 0 0 1 18 5.25v6.5A2.25 2.25 0 0 1 15.75 14H13.5v-3.379a3 3 0 0 0-.879-2.121l-3.12-3.121a3 3 0 0 0-1.402-.791 2.252 2.252 0 0 1 1.913-1.576A2.25 2.25 0 0 1 12.25 1h1.5a2.25 2.25 0 0 1 2.238 2.012ZM11.5 3.25a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 .75.75v.25h-3v-.25Z" clip-rule="evenodd" />
+                    <path d="M3.5 6A1.5 1.5 0 0 0 2 7.5v9A1.5 1.5 0 0 0 3.5 18h7a1.5 1.5 0 0 0 1.5-1.5v-5.879a1.5 1.5 0 0 0-.44-1.06L8.44 6.439A1.5 1.5 0 0 0 7.378 6H3.5Z" />
+                </svg>
+                Copy
+            </button>
+
+            <button
+                x-menu:item
+                type="button"
+                :class="{
+                    'bg-gray-50': $menuItem.isActive,
+                    'opacity-50 cursor-not-allowed': $menuItem.isDisabled,
+                }"
+                class="px-2 py-1.5 w-full flex items-center rounded-md transition-colors focus:outline-none text-left text-gray-800"
+            >
+                <span class="w-7"></span>
+                Move
+            </button>
+
+            <button
+                x-menu:item
+                type="button"
+                :class="{
+                    'bg-gray-50': $menuItem.isActive,
+                    'opacity-50 cursor-not-allowed': $menuItem.isDisabled,
+                }"
+                class="px-2 py-1.5 w-full flex items-center rounded-md transition-colors focus:outline-none text-left text-gray-800"
+                disabled
+            >
+                <svg class="shrink-0 size-5 mr-2" :class="{ 'text-gray-400': ! $menuItem.isActive }" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M13 4.5a2.5 2.5 0 1 1 .702 1.737L6.97 9.604a2.518 2.518 0 0 1 0 .792l6.733 3.367a2.5 2.5 0 1 1-.671 1.341l-6.733-3.367a2.5 2.5 0 1 1 0-3.475l6.733-3.366A2.52 2.52 0 0 1 13 4.5Z" />
+                </svg>
+                Share
+            </button>
+        </div>
+        <div class="p-1.5" role="group">
+            <button
+                x-menu:item
+                type="button"
+                :class="{
+                    'bg-red-50 text-red-600': $menuItem.isActive,
+                    'opacity-50 cursor-not-allowed': $menuItem.isDisabled,
+                }"
+                class="px-2 py-1.5 w-full flex items-center rounded-md transition-colors focus:outline-none text-left text-gray-800"
+            >
+                <svg class="shrink-0 size-5 mr-2" :class="{ 'text-gray-400': ! $menuItem.isActive }" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M8.75 1A2.75 2.75 0 0 0 6 3.75v.443c-.795.077-1.584.176-2.365.298a.75.75 0 1 0 .23 1.482l.149-.022.841 10.518A2.75 2.75 0 0 0 7.596 19h4.807a2.75 2.75 0 0 0 2.742-2.53l.841-10.52.149.023a.75.75 0 0 0 .23-1.482A41.03 41.03 0 0 0 14 4.193V3.75A2.75 2.75 0 0 0 11.25 1h-2.5ZM10 4c.84 0 1.673.025 2.5.075V3.75c0-.69-.56-1.25-1.25-1.25h-2.5c-.69 0-1.25.56-1.25 1.25v.325C8.327 4.025 9.16 4 10 4ZM8.58 7.72a.75.75 0 0 0-1.5.06l.3 7.5a.75.75 0 1 0 1.5-.06l-.3-7.5Zm4.34.06a.75.75 0 1 0-1.5-.06l-.3 7.5a.75.75 0 1 0 1.5.06l.3-7.5Z" clip-rule="evenodd" />
+                </svg>
+                Delete
+            </button>
+        </div>
+    </div>
+</div>

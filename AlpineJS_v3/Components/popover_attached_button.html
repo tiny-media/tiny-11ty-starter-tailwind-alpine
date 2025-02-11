@@ -1,0 +1,55 @@
+---
+packages: @alpinejs, @alpinejs/ui, @alpinejs/focus
+---
+
+<!-- Alpine Component: Popover - Attached Button -->
+
+<div class="flex items-center justify-center">
+    <button type="button" class="relative flex items-center whitespace-nowrap justify-center gap-2 py-2 rounded-l-lg shadow-sm bg-white hover:bg-gray-50 text-gray-800 border border-gray-200 hover:border-gray-200 px-4">
+        <svg class="shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+        </svg>
+        Save
+    </button>
+
+    <!-- Popover -->
+    <div x-data x-popover class="relative">
+
+        <!-- Popover Button -->
+        <button x-popover:button type="button" class="relative flex items-center whitespace-nowrap justify-center gap-2 rounded-r-lg shadow-sm bg-white hover:bg-gray-50 text-gray-800 border border-l-0 border-gray-200 hover:border-gray-200 p-2.5">
+            <span class="sr-only">Options</span>
+
+            <!-- Heroicon: chevron-down -->
+            <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+            </svg>
+        </button>
+
+        <!-- Popover Panel -->
+        <div
+            x-popover:panel
+            x-transition.origin.top.right
+            class="absolute right-0 min-w-48 rounded-lg shadow-sm mt-2 z-10 origin-top-left bg-white p-1.5 outline-none border border-gray-200"
+            x-cloak
+        >
+            <a
+                href="#create"
+                class="group px-2 py-1.5 w-full flex items-center rounded-md  transition-colors text-left text-gray-800 focus-visible:bg-gray-50 hover:bg-gray-50"
+            >
+                New post
+            </a>
+            <a
+                href="#duplicate"
+                class="group px-2 py-1.5 w-full flex items-center rounded-md  transition-colors text-left text-gray-800 focus-visible:bg-gray-50 hover:bg-gray-50"
+            >
+                Duplicate
+            </a>
+            <a
+                href="#delete"
+                class="group px-2 py-1.5 w-full flex items-center rounded-md  transition-colors text-left text-gray-800 focus-visible:bg-gray-50 hover:bg-gray-50"
+            >
+                Delete
+            </a>
+        </div>
+    </div>
+</div>
