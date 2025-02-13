@@ -1,24 +1,4 @@
 {
-    "title": "Tiny 11ty-Tailwind-Alpine Starter",
-    "description": "Dies ist eine Starter Template mit Eleventy v3, TailwindCSS v4, AlpineJS v3 - using the 11ty-vite-plugin. Templating mit LiquidJS",
-    "navigation": [
-      {
-        "title": "Home",
-        "url": "/",
-        "aria": "Visit our homepage",
-        "icon": "home"
-      },
-      {
-        "title": "About",
-        "url": "/about",
-        "aria": "Learn about our company",
-        "icon": "info"
-      },
-      {
-        "title": "Blog",
-        "url": "/blog",
-        "aria": "Read our latest articles",
-        "icon": "book"
-      }
-    ]
-  }
+  "sitename": "Tiny 11ty-Tailwind-Alpine Starter",
+  "description": "Dies ist eine Starter Template mit Eleventy v3, TailwindCSS v4, AlpineJS v3 - using the 11ty-vite-plugin. Templating mit LiquidJS"
+}
