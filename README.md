@@ -1,31 +1,9 @@
-# 11ty Tailwind Vite Starter
+# 11ty Tailwind Vite Svelte Starter
 
-This is a starter project that integrates Eleventy (11ty) with Tailwind CSS v4 and Vite using the official Eleventy Vite plugin.
+This is a starter project that integrates Eleventy (11ty) with Tailwind CSS v4, Svelte and Vite using the official Eleventy Vite plugin.
 
 ## Project Structure
 
-```
-Project Root
-├── package.json              
-├── eleventy.config.js              
-├── README.md 
-└── 11ty_config                 
-    ├── EleventyVitePlugin.js                
-└── 11ty                     
-    ├── about.liquid          
-    ├── index.liquid      
-    ├── _includes
-    │   └── header.liquid       
-    │   └── footer.liquid       
-    ├── _layouts
-    │   └── base.liquid      
-    ├── _data
-    │   └── site.json     
-    ├── _css
-    │   └── styles.css       
-    └── _js
-         └── main.js         
-```
 
 
 ## Getting Started

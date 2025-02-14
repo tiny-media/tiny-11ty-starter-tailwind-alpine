@@ -1,9 +1,8 @@
 1. please use bun ^1.2.2
 2. please use tailwindcss ^4.0.6 for styling
 2.1. please use the current tailwindcss Docs in @Documentations/TailwindCSS_v4/
-3. please use alpine ^3.14.8 for interactivity
-3.1. please use the current alpinejs docs in @Documentations/AlpineJS_v3/
-3.2. alpinejs example components are in @AlpineJS_v3/Components
+3. please use Svelte ^5.20.0 for interactivity (new API after Svelte 4! - using Runes)
+3.1. please use the current SveltJS Docs in @Documentations/SvelteJS_v5/
 4. For Templating please use liquidjs ^10.20.3
 4.1. Current docs can be found in @Documentations/LiquidJS_v10/ for filters, tags and tutorials
 5. I want to learn - please explain what you want me to do to desing a good, modern website that is accessible, responsive, lightweight and fast
