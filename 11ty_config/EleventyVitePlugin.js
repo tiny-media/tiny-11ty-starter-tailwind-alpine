@@ -27,7 +27,6 @@ export const vitePluginConfig = {
           path.resolve('11ty/_css/styles.css'),
           path.resolve('11ty/_js/main.js'),
           path.resolve('11ty/_js/svelte.js'),
-          path.resolve('11ty/_js/alpine.js'),
         ]
       },
       copyPublicDir: true

@@ -16,7 +16,6 @@ export default function (eleventyConfig) {
   // Passthrough copies
   eleventyConfig.addPassthroughCopy('11ty/_css')
   eleventyConfig.addPassthroughCopy('11ty/_js')
-  eleventyConfig.addPassthroughCopy('11ty/_components/svelte')
 
   // Ignores
   eleventyConfig.ignores.add('.DS_Store');
