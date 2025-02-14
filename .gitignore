@@ -15,5 +15,7 @@ npm-debug.log_
 .env.production.local
 .env.local
 
+.windsurfrules
+
 Documentations
 Components

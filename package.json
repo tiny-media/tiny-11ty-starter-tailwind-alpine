@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "rm -rf _site && bunx eleventy --serve --incremental",
+    "dev": "rm -rf _site && bunx eleventy --serve",
     "build": "rm -rf _site && bunx eleventy",
     "stop-server": "lsof -ti :4321-4329 | xargs -r kill -9"
   },
