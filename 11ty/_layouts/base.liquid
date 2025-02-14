@@ -3,21 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }} - {{ sitename }}</title>
+  <title>{{ title }} - {{ site.name }}</title>
   <link rel="stylesheet" href="/_css/styles.css">
-  <script src="/_js/main.js" type="module" defer></script>
-  <script type="module" src="/_js/svelte.js" defer></script>
 </head>
 <body>
-  {% render "header" %}
-
+  {% include "header.liquid" %}
+  
   <main>
     {{ content }}
   </main>
 
 
-  {% render "footer" %}
 
-
+  {% include "footer.liquid" %}
+  
+  <script src="/_js/main.js" defer></script>
 </body>
 </html>

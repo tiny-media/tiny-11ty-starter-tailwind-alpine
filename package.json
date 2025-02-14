@@ -1,19 +1,29 @@
 {
-  "name": "11ty-tailwind-svelte-starter",
+  "name": "11ty-tailwind-alpine",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "rm -rf _site && bunx eleventy --serve",
+    "dev": "rm -rf _site && bunx eleventy --serve --incremental",
     "build": "rm -rf _site && bunx eleventy",
-    "stop-server": "lsof -ti :4321 | xargs kill"
+    "stop-server": "lsof -ti :4321-4329 | xargs -r kill -9"
   },
   "dependencies": {},
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^5.0.3",
-    "svelte": "^5.20.0",
     "@11ty/eleventy": "^3.0.0",
     "tailwindcss": "^4.0.6",
     "@tailwindcss/vite": "^4.0.6",
-    "@11ty/eleventy-plugin-vite": "^6.0.0"
+    "@11ty/eleventy-plugin-vite": "^6.0.0",
+    "@alpinejs/anchor": "^3.14.8",
+    "@alpinejs/collapse": "^3.14.8",
+    "@alpinejs/csp": "^3.14.8",
+    "@alpinejs/focus": "^3.14.8",
+    "@alpinejs/intersect": "^3.14.8",
+    "@alpinejs/mask": "^3.14.8",
+    "@alpinejs/morph": "^3.14.8",
+    "@alpinejs/persist": "^3.14.8",
+    "@alpinejs/resize": "^3.14.8",
+    "@alpinejs/sort": "^3.14.8",
+    "@alpinejs/ui": "^3.14.8",
+    "alpinejs": "^3.14.8"
   }
 }

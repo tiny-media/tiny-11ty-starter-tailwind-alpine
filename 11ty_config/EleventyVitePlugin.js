@@ -1,6 +1,5 @@
 import path from 'path'
 import tailwindcss from '@tailwindcss/vite'
-import { svelte } from '@sveltejs/vite-plugin-svelte'
 
 export const vitePluginConfig = {
   tempFolderName: ".11ty-vite",
@@ -12,12 +11,9 @@ export const vitePluginConfig = {
   viteOptions: {
     clearScreen: false,
     appType: "mpa",
-    plugins: [tailwindcss(), svelte()],
-    optimizeDeps: {
-      include: ['svelte']
-    },
+    plugins: [tailwindcss()],
     server: {
-      middlewareMode: true,
+      middlewareMode: false,
       hmr: true
     },
     build: {
@@ -25,8 +21,7 @@ export const vitePluginConfig = {
       rollupOptions: {
         input: [
           path.resolve('11ty/_css/styles.css'),
-          path.resolve('11ty/_js/main.js'),
-          path.resolve('11ty/_js/svelte.js'),
+          path.resolve('11ty/_js/main.js')
         ]
       },
       copyPublicDir: true
